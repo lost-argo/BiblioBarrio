@@ -27,34 +27,45 @@ El proyecto sigue una **arquitectura en capas** con separación de responsabilid
 src/
 ├── main/
 │   ├── java/org/week04lab01/
-│   │   ├── BilbioBarrioApplication.java          # Punto de entrada + bean ModelMapper
+│   │   ├── BilbioBarrioApplication.java         # Punto de entrada + bean ModelMapper
 │   │   ├── GlobalExceptionHandler.java          # Manejo global de errores (@RestControllerAdvice)
 │   │   ├── exceptions/
-│   │   │   └── ResourceNotFoundException.java  # Excepción de dominio (404)
-│   │   ├── course/
+│   │   │   └── BookNotFoundException.java       # Excepción de dominio (404)
+│   │   │   └── LoanNotFoundException.java       # Excepción de dominio (404)
+│   │   │   └── NoCopiesAvaliableException.java  # Excepción de dominio (409)
+│   │   │   └── OverdueLoanException.java        # Excepción de dominio (400)
+│   │   │   └── UserAlreadyExistsException.java  # Excepción de dominio (409)
+│   │   │   └── UserNotFoundException.java       # Excepción de dominio (404)
+│   │   ├── book/
 │   │   │   ├── application/
-│   │   │   │   └── CourseController.java        # Capa HTTP: endpoints REST
+│   │   │   │   └── BookController.java        # Capa HTTP: endpoints REST
 │   │   │   ├── domain/
-│   │   │   │   ├── Course.java                  # Entidad JPA
-│   │   │   │   └── CourseService.java           # Lógica de negocio
+│   │   │   │   ├── Book.java                  # Entidad JPA
+│   │   │   │   └── BookService.java           # Lógica de negocio
 │   │   │   ├── dto/
 │   │   │   │   ├── CourseRequestDto.java        # DTO de entrada
 │   │   │   │   ├── CourseResponseDto.java       # DTO de salida
 │   │   │   │   └── AddStudentToCourseDto.java   # DTO de respuesta para matrícula
 │   │   │   └── infrastructure/
-│   │   │       └── CourseRepository.java        # Spring Data JPA repository
-│   │   ├── student/
-│   │   │   ├── application/StudentController.java
+│   │   │       └── BookRepository.java        # Spring Data JPA repository
+│   │   ├── loan/
+│   │   │   ├── application/LoanController.java
 │   │   │   ├── domain/
-│   │   │   │   ├── Student.java
-│   │   │   │   └── StudentService.java
-│   │   │   └── infrastructure/StudentRepository.java
-│   │   └── teacher/
-│   │       ├── application/TeacherController.java
-│   │       ├── domain/
-│   │       │   ├── Teacher.java
-│   │       │   └── TeacherService.java
-│   │       └── infrastructure/TeacherRepository.java
+│   │   │   │   ├── Loan.java
+│   │   │   │   └── LoanService.java
+│   │   │   └── infrastructure/LoanRepository.java
+│   │   ├── reservation/
+│   │   │   ├── application/ReservationController.java
+│   │   │   ├── domain/
+│   │   │   │   ├── Reservation.java
+│   │   │   │   └── ReservationService.java
+│   │   │   └── infrastructure/ReservationRepository.java
+│   │   ├── user/
+│   │   │   ├── application/UserController.java
+│   │   │   ├── domain/
+│   │   │   │   ├── User.java
+│   │   │   │   └── UserService.java
+│   │   │   └── infrastructure/UserRepository.java
 │   └── resources/
 │       ├── application.properties               # Configuración de la app (PostgreSQL)
 │       └── data.sql                             # Datos de ejemplo (se cargan en cada arranque)
