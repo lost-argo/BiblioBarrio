@@ -4,6 +4,7 @@ import org.bibliobarrio.loan.infrastructure.LoanRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -24,6 +25,10 @@ public class LoanService {
     }
 
     public void addLoan(Loan newLoan){
+        LocalDate borrowDate = LocalDate.now();
+        LocalDate dueDate = borrowDate.plusDays(14);
+        newLoan.setBorrowDate(borrowDate);
+        newLoan.setDueDate(dueDate);
         loanRepository.save(newLoan);
     }
 }

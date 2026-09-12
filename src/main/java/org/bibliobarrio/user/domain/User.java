@@ -20,5 +20,5 @@ public class User {
     String username;
     String email;
     String password;
-    String role = "ROLE_READER";
+    String role;
 }

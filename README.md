@@ -43,9 +43,8 @@ src/
 │   │   │   │   ├── Book.java                  # Entidad JPA
 │   │   │   │   └── BookService.java           # Lógica de negocio
 │   │   │   ├── dto/
-│   │   │   │   ├── CourseRequestDto.java        # DTO de entrada
-│   │   │   │   ├── CourseResponseDto.java       # DTO de salida
-│   │   │   │   └── AddStudentToCourseDto.java   # DTO de respuesta para matrícula
+│   │   │   │   ├── BookRequestDto.java        # DTO de entrada
+│   │   │   │   ├── BookResponseDto.java       # DTO de salida
 │   │   │   └── infrastructure/
 │   │   │       └── BookRepository.java        # Spring Data JPA repository
 │   │   ├── loan/
@@ -65,6 +64,9 @@ src/
 │   │   │   ├── domain/
 │   │   │   │   ├── User.java
 │   │   │   │   └── UserService.java
+│   │   │   ├── dto/
+│   │   │   │   ├── UserRequestDto.java
+│   │   │   │   └── UserResponseDto.java
 │   │   │   └── infrastructure/UserRepository.java
 │   └── resources/
 │       ├── application.properties               # Configuración de la app (PostgreSQL)

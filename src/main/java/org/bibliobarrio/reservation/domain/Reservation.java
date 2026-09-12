@@ -7,6 +7,7 @@ import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.bibliobarrio.book.domain.Book;
 import org.bibliobarrio.user.domain.User;
 
@@ -14,6 +15,7 @@ import java.time.ZonedDateTime;
 
 @AllArgsConstructor
 @NoArgsConstructor
+@Setter
 @Getter
 @Entity
 public class Reservation {

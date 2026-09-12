@@ -23,7 +23,8 @@ public class UserService {
         return  userRepository.findById(id).orElseThrow(() -> new RuntimeException("User with id" + id + " not found"));
     }
 
-    public void addUser(User user){
-        userRepository.save(user);
+    public void addUser(User newUser){
+        newUser.setRole("ROLE_READER");
+        userRepository.save(newUser);
     }
 }
