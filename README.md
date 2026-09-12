@@ -2,6 +2,10 @@
 
 ## Para que sirve este Repositorio?
 
+Una municipalidad necesita habilitar una mini-biblioteca digital para un barrio. Se requiere
+desarrollar BiblioBarrio, un servicio REST que gestione libros, usuarios y préstamos con
+autenticación segura.
+
 ## Cómo ejecutar el proyecto
 
 ### Prequisitos
